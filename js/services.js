@@ -121,7 +121,8 @@ app.factory('FlickrService', function ($http) {
                 params: {
                     method: 'flickr.photosets.getPhotos',
                     api_key: 'cc5ee47ca01f2b7e0517701ad4f89501',
-                    photoset_id: '72157638621171243',
+//                    photoset_id: '72157638621171243', // 5 points with partner
+                    photoset_id: '72157644194708412', // Artworks
                     extras: 'date_upload,tags,views,url_o,url_c,url_q,description',
                     format: 'json',
                     //callback: 'JSON_CALLBACK'

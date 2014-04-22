@@ -2,13 +2,13 @@
     /*padding-top: 50px;*/
 /*}*/
 .angular-google-map-container {
-    width: 400px;
-    height: 400px;
+    width: 230px;
+    height: 300px;
 }
 
-.angular-google-map-container.mobile {
-    width: 200px;
-    height: 200px;
+.angular-google-map-container-mobile {
+    width: 400px;
+    height: 400px;
 }
 
 .animate-enter {

@@ -1,0 +1,19 @@
+<!-- Modal HTML -->
+<div class="modal-dialog fade" ng-controller="PhotoController">
+    <script type="text/ng-template" id="viewPhoto.html">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                    ng-click="cancel()">&times;</button>
+            <h4 class="modal-title text-info">{{item.title}}</h4>
+            <span class="badge" ng-repeat="tag in item.tags"><small>{{tag}}</small></span>
+        </div>
+        <div class="modal-body">
+            <img src="{{item.url_c}}" class="img-responsive img-rounded" alt="Image">
+            <a href="{{item.images.short_url}}" alt="Image">{{item.images.short_url}}</a>
+        </div>
+        <div class="modal-footer">
+            <span class="pull-left">{{item.description}}</span>
+            <a target="_new" ng-href="{{item.url_o}}" class="btn btn-primary">View Original</a>
+        </div>
+    </script>
+</div>

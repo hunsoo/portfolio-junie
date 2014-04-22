@@ -1,0 +1,88 @@
+/*body {*/
+    /*padding-top: 50px;*/
+/*}*/
+.angular-google-map-container {
+    width: 400px;
+    height: 400px;
+}
+
+.angular-google-map-container.mobile {
+    width: 200px;
+    height: 200px;
+}
+
+.animate-enter {
+-webkit-transition: 1s linear all; /* Chrome */
+transition: 1s linear all;
+opacity: 0;
+}
+
+.animate-enter.animate-enter-active {
+opacity: 1;
+}
+
+/*.jumbotron.contact {*/
+    /*background-color: darkslateblue;*/
+    /*color: white;*/
+/*}*/
+
+.jumbotron.portfolio {
+    /*border: 0px 0px 0px 0px;*/
+    padding: 5px 5px 5px 5px;
+}
+
+.img-thumbnail:hover {
+    background-color: #657E9B;
+    transition: background-color 0.3s ease-out;
+}
+
+.work {
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.work:hover {
+    background-color: #CECECE;
+    transition: background-color 0.3s ease-out;
+}
+
+.ng-social-buttons {
+    margin-top: 12px;
+}
+
+.social-links {
+    margin-left: 0;
+}
+.social-links li {
+    margin: 2px;
+	list-style: none outside none;
+	float: left;
+}
+
+/*
+ * Social Media icons by http://icondock.com/free/vector-social-media-icons
+ */
+.social-icon {
+	direction: ltr;
+    text-indent: -9999px;
+    display: block;
+    width: 32px;
+    height: 32px;
+    position: relative;
+    background: url("../img/social/twitter-2.png") no-repeat left top transparent;
+}
+
+.social-icon.facebook { background-image: url("../img/social/facebook.png"); }
+.social-icon.flickr { background-image: url("../img/social/flickr.png"); }
+.social-icon.github { background-image: url("../img/social/github.png"); }
+.social-icon.identica { background-image: url("../img/social/identi.png"); }
+.social-icon.instagram { background-image: url("../img/social/instagram.png"); }
+.social-icon.lastfm { background-image: url("../img/social/lastfm.png"); }
+.social-icon.linkedin { background-image: url("../img/social/linkedin.png"); }
+.social-icon.slideshare { background-image: url("../img/social/slideshare.png"); }
+.social-icon.twitter { background-image: url("../img/social/twitter-2.png"); }
+.social-icon.vimeo { background-image: url("../img/social/vimeo.png"); }
+.social-icon.wikipedia { background-image: url("../img/social/wikipedia.png"); }
+.social-icon.youtube { background-image: url("../img/social/youtube.png"); }

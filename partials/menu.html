@@ -1,0 +1,46 @@
+<nav role="navigation" class="navbar navbar-default" ng-controller="MenuController">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+
+        <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle" data-target="#navbarCollapse"
+            ng-click="toggle()">
+            <!--data-toggle="toggle()">-->
+            <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand">Junie's</a>
+        </div>
+
+        <!-- Collection of nav links and other content for toggling -->
+        <div id="navbarCollapse" class="navbar-collapse collapse" collapse="isCollapsed">
+            <ul class="nav navbar-nav">
+                <li ng-class="{ active: isActive('/')}">
+                    <a href="#"><span class="glyphicon glyphicon-home"></span> Home</a>
+                </li>
+                <li ng-class="{ active: isActive('/profile')}">
+                    <a href="#/profile"><span class="glyphicon glyphicon-user"></span> Profile</a>
+                </li>
+                <li ng-class="{ active: isActive('/contact')}">
+                    <a href="#/contact"><span class="glyphicon glyphicon-envelope"></span> Contact</a>
+                </li>
+                <!--<li><a href="#">Messages<span class="badge">4</span></a></li>-->
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      <span class="glyphicon glyphicon-globe"></span> Share<b class="caret"></b></a>
+                    <div class="dropdown-menu" ng-include src="'partials/socialShareTemplate.html'"></div>
+                </li>
+
+                <!--<div class="navbar-right pull-right ng-social-buttons hidden-xs">-->
+                    <!--<div ng-include src="'partials/socialShareTemplate.html'"></div>-->
+                <!--</div>-->
+            </ul>
+
+        </div>
+
+    </div>
+</nav>

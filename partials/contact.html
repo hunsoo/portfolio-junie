@@ -1,0 +1,42 @@
+<div class="container" ng-controller="EmailController">
+    <div class="jumbotron contact">
+        <!--style="background-image: url(http://netdna.webdesignerdepot.com/uploads/wooden_ui_design/t3-1.jpg);">-->
+
+        <form role="form" action="submit">
+
+            <h1>Let's Keep In Touch!</h1>
+
+            <p>Thank you for visiting my website. If you have enjoyed it, why don't you leave me some feedback?</p>
+
+            <div class="form-group">
+                <label for="name" class="control-label"><span class="glyphicon glyphicon-user"></span> Name</label>
+                <input id="name" type="text" placeholder="John Doe" ng-model="email.name" required class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="email" class="control-label"><span class="glyphicon glyphicon-envelope"></span> Email
+                    Address</label>
+                <input id="email" type="email" placeholder="address@example.com" ng-model="email.sender" required
+                       class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label for="subject" class="control-label"><span class="glyphicon glyphicon-question-sign"></span>
+                    Subject</label>
+                <input id="subject" type="text" placeholder="Hello Junie!" ng-model="email.subject"
+                       class="form-control"/>
+            </div>
+
+            <div class="form-group">
+                <label for="message" class="control-label"><span class="glyphicon glyphicon-pencil"></span>
+                    Message</label>
+                <textarea id="message" type="text" placeholder="I love your work!" ng-model="email.message"
+                          class="form-control" rows="10"></textarea>
+            </div>
+            <div class="form-group">
+                <a class="btn btn-primary cont" ng-href="mailto:{{email.recipient}}?subject={{email.subject}}&body=
+                'Message From ' + {{email.name + ":" + email.message}}">
+                    Send Message
+                </a>
+            </div>
+        </form>
+    </div>
+</div>

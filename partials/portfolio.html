@@ -1,0 +1,94 @@
+<div class="container">
+    <h4 class="text-info">Filters:</h4>
+    <div class="btn-toolbar" role="toolbar">
+    <div class="btn-group btn-group-xs" data-toggle="buttons">
+        <button type="button" class="btn btn-primary" btn-checkbox ng-model="type.toydesign">
+            <span class="fa fa-check-square-o" ng-show="type.toydesign"></span>
+            <span class="fa fa-square-o" ng-show="!type.toydesign"></span>
+            Toy Design
+        </button>
+        <button type="button" class="btn btn-primary" btn-checkbox ng-model="type.illustration">
+            <span class="fa fa-check-square-o" ng-show="type.illustration"></span>
+            <span class="fa fa-square-o" ng-show="!type.illustration"></span>
+            Illustration
+        </button>
+        <button type="button" class="btn btn-primary" btn-checkbox ng-model="type.figuredrawing">
+            <span class="fa fa-check-square-o" ng-show="type.figuredrawing"></span>
+            <span class="fa fa-square-o" ng-show="!type.figuredrawing"></span>
+            Figure Drawing
+        </button>
+    </div>
+
+    <div class="btn-group btn-group-xs" data-toggle="buttons">
+        <button type="button" class="btn btn-info" btn-checkbox ng-model="material.pen">
+            <span class="fa fa-check-square-o" ng-show="material.pen"></span>
+            <span class="fa fa-square-o" ng-show="!material.pen"></span>
+            Pen
+        </button>
+        <button type="button" class="btn btn-info" btn-checkbox ng-model="material.pencil">
+            <span class="fa fa-check-square-o" ng-show="material.pencil"></span>
+            <span class="fa fa-square-o" ng-show="!material.pencil"></span>
+            Pencil
+        </button>
+        <button type="button" class="btn btn-info" btn-checkbox ng-model="material.pastel">
+            <span class="fa fa-check-square-o" ng-show="material.pastel"></span>
+            <span class="fa fa-square-o" ng-show="!material.pastel"></span>
+            Pastel
+        </button>
+    </div>
+
+    <div class="btn-group btn-group-xs" data-toggle="buttons">
+        <button type="button" class="btn btn-success" btn-checkbox ng-model="seriousness.serious">
+            <span class="fa fa-check-square-o" ng-show="seriousness.serious"></span>
+            <span class="fa fa-square-o" ng-show="!seriousness.serious"></span>
+            Serious
+        </button>
+        <button type="button" class="btn btn-warning" btn-checkbox ng-model="seriousness.notsoserious">
+            <span class="fa fa-check-square-o" ng-show="seriousness.notsoserious"></span>
+            <span class="fa fa-square-o" ng-show="!seriousness.notsoserious"></span>
+            Not So Serious
+        </button>
+        <button type="button" class="btn btn-danger" btn-checkbox ng-model="seriousness.stupid">
+            <span class="fa fa-check-square-o" ng-show="seriousness.stupid"></span>
+            <span class="fa fa-square-o" ng-show="!seriousness.stupid"></span>
+            Stupid
+        </button>
+    </div>
+    </div>
+</div>
+
+<div class="container jumbotron portfolio" ng-controller="PhotoController">
+    <div class="col-xs-6 col-ms-4 col-sm-4 col-md-3 col-lg-2" ng-repeat="item in photos"
+         ng-class="{'clearfix' : $index % 2 == 0 || $index % 3 == 0 || $index % 4 == 0 || $index % 6 == 0}">
+        <div class="thumbnail work">
+            <span class="badge"><small>{{item.source}}</small></span>
+            <img src="{{item.images.thumbnail.url}}"
+                 class="img-responsive img-thumbnail" width="90%" alt="Thumbnail" title="{{item.title}}"
+                 style="margin-top: 10px;" ng-click="open(item)">
+
+            <div class="caption">
+                <span class="text-muted">{{item.dateupload * 1000 | date:'mediumDate'}}</span>
+                <span class="label label-default small hidden-xs" ng-show="isRecent(item.dateupload)">New</span>
+
+                <div><span class="text-muted">Views: {{item.views}}</span></div>
+                <!--<h5 class="hidden-xs">{{item.title}}</h5>-->
+                <p class="text-center">
+                    <a ng-click="share(item)" class="btn btn-primary hidden-xs">
+                        <span class="fa fa-facebook-square"></span> Share</a>
+                    <a ng-click="share(item)" class="btn-xs btn-primary visible-xs">
+                        <span class="fa fa-facebook-square"></span> Share</a>
+
+                    <a target="_blank" ng-href="{{item.url_o}}" download="{{item.title}}.jpg"
+                       class="btn btn-info hidden-xs">
+                        <span class="glyphicon glyphicon-save"></span> Save</a>
+                    <a target="_blank" ng-href="{{item.url_o}}" download="{{item.title}}.jpg"
+                       class="btn-xs btn-info visible-xs">
+                        <span class="glyphicon glyphicon-save"></span> Save</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal HTML -->
+<div ng-include src="'partials/photoModalTemplate.html'"></div>

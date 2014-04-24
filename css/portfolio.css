@@ -1,5 +1,5 @@
 /*body {*/
-    /*padding-top: 50px;*/
+/*padding-top: 50px;*/
 /*}*/
 .angular-google-map-container {
     width: 230px;
@@ -12,37 +12,55 @@
 }
 
 .animate-enter {
--webkit-transition: 1s linear all; /* Chrome */
-transition: 1s linear all;
-opacity: 0;
+    -webkit-transition: 1s linear all; /* Chrome */
+    transition: 1s linear all;
+    opacity: 0;
 }
 
 .animate-enter.animate-enter-active {
-opacity: 1;
+    opacity: 1;
+}
+
+.carousel .item {
+    height: 500px;
+}
+
+.carousel img {
+    top: 100px;
+    width: auto;
 }
 
 .carousel-caption {
-    top: 0;
+    top: 0px;
     bottom: auto;
-    color: firebrick;
+    color: #FFF;
+    border-radius: 20px;
+    background: none repeat scroll 0% 0% rgba(0, 0, 0, 0.8);
+    padding: 0px;
 }
 
+/*.carousel-caption {*/
+    /*top: 0;*/
+    /*bottom: auto;*/
+    /*color: firebrick;*/
+/*}*/
+
 /*.carousel .item {*/
-  /*-webkit-transition: opacity 1s;*/
-  /*-moz-transition: opacity 1s;*/
-  /*-ms-transition: opacity 1s;*/
-  /*-o-transition: opacity 1s;*/
-  /*transition: opacity 1s;*/
+/*-webkit-transition: opacity 1s;*/
+/*-moz-transition: opacity 1s;*/
+/*-ms-transition: opacity 1s;*/
+/*-o-transition: opacity 1s;*/
+/*transition: opacity 1s;*/
 /*}*/
 /*.carousel .active.left, .carousel .active.right {*/
-  /*left:0;*/
-  /*opacity:0;*/
-  /*z-index:2;*/
+/*left:0;*/
+/*opacity:0;*/
+/*z-index:2;*/
 /*}*/
 /*.carousel .next, .carousel .prev {*/
-  /*left:0;*/
-  /*opacity:1;*/
-  /*z-index:1;*/
+/*left:0;*/
+/*opacity:1;*/
+/*z-index:1;*/
 /*}*/
 
 .jumbotron {
@@ -50,8 +68,8 @@ opacity: 1;
 }
 
 /*.jumbotron.contact {*/
-    /*background-color: darkslateblue;*/
-    /*color: white;*/
+/*background-color: darkslateblue;*/
+/*color: white;*/
 /*}*/
 
 .jumbotron.portfolio {
@@ -83,17 +101,18 @@ opacity: 1;
 .social-links {
     margin-left: 0;
 }
+
 .social-links li {
     margin: 2px;
-	list-style: none outside none;
-	float: left;
+    list-style: none outside none;
+    float: left;
 }
 
 /*
  * Social Media icons by http://icondock.com/free/vector-social-media-icons
  */
 .social-icon {
-	direction: ltr;
+    direction: ltr;
     text-indent: -9999px;
     display: block;
     width: 32px;
@@ -102,15 +121,50 @@ opacity: 1;
     background: url("../img/social/twitter-2.png") no-repeat left top transparent;
 }
 
-.social-icon.facebook { background-image: url("../img/social/facebook.png"); }
-.social-icon.flickr { background-image: url("../img/social/flickr.png"); }
-.social-icon.github { background-image: url("../img/social/github.png"); }
-.social-icon.identica { background-image: url("../img/social/identi.png"); }
-.social-icon.instagram { background-image: url("../img/social/instagram.png"); }
-.social-icon.lastfm { background-image: url("../img/social/lastfm.png"); }
-.social-icon.linkedin { background-image: url("../img/social/linkedin.png"); }
-.social-icon.slideshare { background-image: url("../img/social/slideshare.png"); }
-.social-icon.twitter { background-image: url("../img/social/twitter-2.png"); }
-.social-icon.vimeo { background-image: url("../img/social/vimeo.png"); }
-.social-icon.wikipedia { background-image: url("../img/social/wikipedia.png"); }
-.social-icon.youtube { background-image: url("../img/social/youtube.png"); }
+.social-icon.facebook {
+    background-image: url("../img/social/facebook.png");
+}
+
+.social-icon.flickr {
+    background-image: url("../img/social/flickr.png");
+}
+
+.social-icon.github {
+    background-image: url("../img/social/github.png");
+}
+
+.social-icon.identica {
+    background-image: url("../img/social/identi.png");
+}
+
+.social-icon.instagram {
+    background-image: url("../img/social/instagram.png");
+}
+
+.social-icon.lastfm {
+    background-image: url("../img/social/lastfm.png");
+}
+
+.social-icon.linkedin {
+    background-image: url("../img/social/linkedin.png");
+}
+
+.social-icon.slideshare {
+    background-image: url("../img/social/slideshare.png");
+}
+
+.social-icon.twitter {
+    background-image: url("../img/social/twitter-2.png");
+}
+
+.social-icon.vimeo {
+    background-image: url("../img/social/vimeo.png");
+}
+
+.social-icon.wikipedia {
+    background-image: url("../img/social/wikipedia.png");
+}
+
+.social-icon.youtube {
+    background-image: url("../img/social/youtube.png");
+}

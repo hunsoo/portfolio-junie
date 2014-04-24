@@ -4,7 +4,7 @@
         <slide ng-repeat="item in photos" active="photo.active">
           <img ng-src="{{item.url_c}}" class="img-responsive" style="width:100%;">
           <div class="carousel-caption">
-            <h4>Slide {{$index+1}}: {{item.title}}</h4>
+            <h4>#{{$index+1}}: {{item.title}}</h4>
             <!--<p>{{item.description}}</p>-->
           </div>
         </slide>

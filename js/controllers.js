@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('MenuController', function($scope, $location) {
+app.controller('MenuController', function ($scope, $location) {
     $scope.isCollapsed = true;
 
     $scope.isActive = function (viewLocation) {
@@ -17,42 +17,20 @@ app.controller('SocialController', function ($scope) {
     $scope.description = "Junie Kim's portfolio website with all kinds of stupid and meaningless drawings";
 });
 
-app.controller('PhotoController', function ($scope, $modal, FacebookService, FlickrService, InstagramService) {
-    $scope.type = {
-        toydesign: true,
-        illustration: true,
-        figuredrawing: false
-    };
-
-    $scope.material = {
-        pen: true,
-        pencil: true,
-        pastel: true
-    }
-
-    $scope.seriousness = {
-        serious: true,
-        notsoserious: true,
-        stupid: false
-    }
-
-    $scope.toggle = function(criteria) {
-        criteria = !criteria;
-    }
-
-    $scope.share = FacebookService.share;
-
+app.controller('PhotoController', function ($scope, $modal, FacebookService, FlickrService, InstagramService, FilterResource) {
     $scope.photos = [];
-
-    InstagramService.getPhotos().then(function(response) {
-//        $scope.photos = response;
+    InstagramService.getPhotos().then(function (response) {
+        $scope.photos.push.apply($scope.photos, response);
+    });
+    FlickrService.getPhotos().then(function (response) {
         $scope.photos.push.apply($scope.photos, response);
     });
 
-    FlickrService.getPhotos().then(function(response) {
-//        $scope.photos = response;
-        $scope.photos.push.apply($scope.photos, response);
-    });
+    $scope.shareOnFacebook = FacebookService.share;
+//    $scope.shareOnTwitter = TwitterService.share;
+
+    $scope.isCollapsed = false;
+    $scope.filters = FilterResource.query(function () {});
 
     $scope.open = function (item) {
         var modalInstance = $modal.open({
@@ -69,12 +47,11 @@ app.controller('PhotoController', function ($scope, $modal, FacebookService, Fli
 
     // check if the uploaded date is within a month from now
     $scope.isRecent = function (date) {
-        var date = new Date(date*1000);
+        var howManyDaysAgo = 7;
+        var date = new Date(date * 1000);
         var today = new Date();
-        var monthAgo = new Date(today.setMonth(today.getMonth() - 1));
-        //TODO: remove the line below to make it work with real data
-        //var monthAgo = new Date(2013, 9, 1);
-        return (date > monthAgo);
+        var daysAgo = new Date(today.setDate(today.getDate() - howManyDaysAgo));
+        return (date > daysAgo);
     };
 });
 
@@ -93,7 +70,7 @@ app.controller('ModalInstanceController', function ($scope, $modalInstance, item
     }
 });
 
-app.controller('GoogleMapController', function($scope) {
+app.controller('GoogleMapController', function ($scope) {
     $scope.map = {
         center: {
             // Fresh Meadows, NY 11365
@@ -104,8 +81,8 @@ app.controller('GoogleMapController', function($scope) {
     };
 });
 
-app.controller('EmailController', function($scope) {
-    $scope.email  = {
+app.controller('EmailController', function ($scope) {
+    $scope.email = {
         recipient: 'jewknee620@gmail.com'
     }
-})
+});

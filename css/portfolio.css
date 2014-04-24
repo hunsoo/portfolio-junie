@@ -21,6 +21,34 @@ opacity: 0;
 opacity: 1;
 }
 
+.carousel-caption {
+    top: 0;
+    bottom: auto;
+    color: firebrick;
+}
+
+/*.carousel .item {*/
+  /*-webkit-transition: opacity 1s;*/
+  /*-moz-transition: opacity 1s;*/
+  /*-ms-transition: opacity 1s;*/
+  /*-o-transition: opacity 1s;*/
+  /*transition: opacity 1s;*/
+/*}*/
+/*.carousel .active.left, .carousel .active.right {*/
+  /*left:0;*/
+  /*opacity:0;*/
+  /*z-index:2;*/
+/*}*/
+/*.carousel .next, .carousel .prev {*/
+  /*left:0;*/
+  /*opacity:1;*/
+  /*z-index:1;*/
+/*}*/
+
+.jumbotron {
+    background-image: url(../img/41704380.light_mosaic.png);
+}
+
 /*.jumbotron.contact {*/
     /*background-color: darkslateblue;*/
     /*color: white;*/

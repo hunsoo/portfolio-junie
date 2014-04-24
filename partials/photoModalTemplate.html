@@ -13,7 +13,11 @@
         </div>
         <div class="modal-footer">
             <span class="pull-left">{{item.description}}</span>
-            <a target="_new" ng-href="{{item.url_o}}" class="btn btn-primary">View Original</a>
+            <a target="_blank" ng-href="{{item.url_o}}" download="{{item.title}}.jpg"
+               class="btn btn-success hidden-xs">
+                <span class="glyphicon glyphicon-save"></span> Save</a>
+            <a target="_new" ng-href="{{item.url_o}}" class="btn btn-primary">
+                <span class="glyphicon glyphicon-eye-open"></span> View Original</a>
         </div>
     </script>
 </div>

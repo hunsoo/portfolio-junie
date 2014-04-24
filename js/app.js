@@ -1,8 +1,7 @@
 'use strict';
 
-var app = angular.module('Portfolio', ['ngRoute', 'ui.bootstrap', 'ngSocial', 'ngTouch', 'google-maps']);
+var app = angular.module('Portfolio', ['ngRoute', 'ui.bootstrap', 'ngTouch', 'ngSocial', 'google-maps', 'ngResource']);
 
-// Declare app level module which depends on filters, and services
 app.config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/', {
         templateUrl: 'partials/portfolio.html',

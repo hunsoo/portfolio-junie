@@ -1,4 +1,5 @@
 'use strict';
+angular.module('app.services', []);
 
 // Facebook
 app.service('FacebookService', function () {
@@ -24,7 +25,8 @@ app.service('FacebookService', function () {
                 {
                     method: 'feed',
                     name: "Drawings with Paw",
-                    link: 'https://www.flickr.com/photos/101690713@N06/',
+                    link: 'http://hunsoo.github.io/portfolio-junie',
+//                    link: 'https://www.flickr.com/photos/101690713@N06/',
                     picture: item.url_c,
                     caption: item.title,
                     description: item.description,
@@ -37,7 +39,6 @@ app.service('FacebookService', function () {
 // Instagram
 app.factory('InstagramService', ['$http', function ($http) {
     var base_url = "https://api.instagram.com/v1";
-    // get your own client id http://instagram.com/developer/
     var access_token = '579952724.1fb234f.70a242ae264d4ef78f165114b4e50a9c';
     var client_id = '50a8a8e965024b7cbc31ec8f88a807dd';
     var user_id = '579952724';
@@ -71,6 +72,7 @@ app.factory('InstagramService', ['$http', function ($http) {
                         value.dateupload = value.created_time;
                         value.views = value.likes.count;
                     });
+
                     function ownPictureFilter(photo, index, array) {
                         return (photo.user.username === 'juniekim620');
                     }
@@ -83,7 +85,7 @@ app.factory('InstagramService', ['$http', function ($http) {
 }]);
 
 // Flickr
-app.factory('FlickrService', function ($http) {
+app.factory('FlickrService', ['$http', function ($http) {
     function base58_encode(input) {
         var alphabet = '123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ';
         var base = alphabet.length;
@@ -136,6 +138,7 @@ app.factory('FlickrService', function ($http) {
                     angular.forEach(photos, function (value, key) {
                         value.source = 'Flickr';
                         value.description = value.description._content;
+                        value.tags = (value.tags === "" ? [] : value.tags.split(" "));
                         value.images = {
                             short_url: 'http://flic.kr/p/' + base58_encode(parseInt(value.id)),
                             thumbnail: {
@@ -149,4 +152,10 @@ app.factory('FlickrService', function ($http) {
             return photoset;
         }
     }
-});
+}]);
+
+app.factory('FilterResource', ['$resource', function($resource){
+		return $resource('resource/filterData.json', {}, {
+			query: {method:'GET', isArray:false}
+		})
+	}]);

@@ -1,0 +1,77 @@
+{
+    "type": {
+        "category": "Type",
+        "data": [
+            {
+                "name": "Toy Design",
+                "value": true
+            },
+            {
+                "name": "Illustration",
+                "value": true
+            },
+            {
+                "name": "Figure Drawing",
+                "value": true
+            }
+        ]
+    },
+    "material": {
+        "category": "Material",
+        "data": [
+            {
+                "name": "Pen",
+                "value": true
+            },
+            {
+                "name": "Pencil",
+                "value": true
+            },
+            {
+                "name": "Color Pencil",
+                "value": true
+            },
+            {
+                "name": "Marker",
+                "value": true
+            },
+            {
+                "name": "Acrylic",
+                "value": true
+            },
+            {
+                "name": "Oil Pastel",
+                "value": true
+            },
+            {
+                "name": "Charcoal",
+                "value": true
+            },
+            {
+                "name": "Watercolor",
+                "value": true
+            },
+            {
+                "name": "Ink",
+                "value": true
+            }
+        ]
+    },
+    "seriousness": {
+        "category": "Seriousness",
+        "data": [
+            {
+                "name": "Serious",
+                "value": true
+            },
+            {
+                "name": "Not So Serious",
+                "value": true
+            },
+            {
+                "name": "Stupid",
+                "value": false
+            }
+        ]
+    }
+}

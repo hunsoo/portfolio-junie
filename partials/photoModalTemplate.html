@@ -1,5 +1,7 @@
 <!-- Modal HTML -->
-<div class="modal-dialog fade" ng-controller="PhotoController">
+<div class="modal-dialog fade" ng-controller="PhotoController"
+     ng-swipe-left="prevImage()"
+     ng-swipe-right="nextImage()">
     <script type="text/ng-template" id="viewPhoto.html">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
@@ -9,7 +11,7 @@
         </div>
         <div class="modal-body">
             <img src="{{item.url_c}}" class="img-responsive img-rounded" alt="Image">
-            <a href="{{item.images.short_url}}" alt="Image">{{item.images.short_url}}</a>
+            <a href="{{item.link}}" alt="Image">{{item.link}}</a>
         </div>
         <div class="modal-footer">
             <span class="pull-left">{{item.description}}</span>

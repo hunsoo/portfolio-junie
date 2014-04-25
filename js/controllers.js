@@ -30,9 +30,9 @@ app.controller('PhotoController', function ($scope, $modal, FacebookService, Fli
 //    $scope.shareOnTwitter = TwitterService.share;
 
     $scope.isCollapsed = false;
-    $scope.filters = FilterResource.query(function () {});
+    $scope.categoryFilters = FilterResource.query(function () {});
 
-    $scope.open = function (item) {
+    $scope.open = function (item, items) {
         var modalInstance = $modal.open({
             templateUrl: 'viewPhoto.html',
             scope: $scope,
@@ -40,6 +40,9 @@ app.controller('PhotoController', function ($scope, $modal, FacebookService, Fli
             resolve: {
                 item: function () {
                     return item;
+                },
+                items: function () {
+                    return items;
                 }
             }
         });
@@ -55,19 +58,42 @@ app.controller('PhotoController', function ($scope, $modal, FacebookService, Fli
     };
 });
 
-app.controller('ModalInstanceController', function ($scope, $modalInstance, item) {
+app.controller('ModalInstanceController', function ($scope, $modalInstance, $timeout, $document, item, items) {
     $scope.item = item;
+    var size = items.length;
+    var index = items.indexOf(item);
 
     $scope.cancel = function () {
         $modalInstance.dismiss('cancel');
     }
 
-    $scope.next = function () {
+    $scope.prevImage = function () {
+        index = (index - 1 + size) % size;
+        $scope.item = items[index];
+        console.log('prevImage() - new index: ', index);
+    };
 
+    $scope.nextImage = function () {
+        index = (index + 1) % size;
+        $scope.item = items[index];
+        console.log('nextImage() - new index: ', index);
     }
-    $scope.previous = function () {
 
-    }
+    $document.bind('keydown', function (event) {
+        switch (event.which) {
+            case 39: // right arrow key
+                // don't know why the view doesn't update without this manual digest
+                $timeout(function () {
+                    $scope.nextImage();
+                });
+                return false;
+            case 37: // left arrow key
+                $timeout(function () {
+                    $scope.prevImage();
+                });
+                return false;
+        }
+    });
 });
 
 app.controller('GoogleMapController', function ($scope) {

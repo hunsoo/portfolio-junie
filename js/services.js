@@ -139,8 +139,8 @@ app.factory('FlickrService', ['$http', function ($http) {
                         value.source = 'Flickr';
                         value.description = value.description._content;
                         value.tags = (value.tags === "" ? [] : value.tags.split(" "));
+                        value.link = 'http://flic.kr/p/' + base58_encode(parseInt(value.id));
                         value.images = {
-                            short_url: 'http://flic.kr/p/' + base58_encode(parseInt(value.id)),
                             thumbnail: {
                                 url: value.url_q
                             }

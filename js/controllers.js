@@ -33,7 +33,8 @@ app.controller('PhotoController', function ($scope, $modal, FacebookService, Fli
     $scope.categoryFilters = FilterResource.query(function () {});
 
     $scope.open = function (item, items) {
-        var modalInstance = $modal.open({
+//        var modalInstance =
+        $modal.open({
             templateUrl: 'viewPhoto.html',
             scope: $scope,
             controller: 'ModalInstanceController',
@@ -51,7 +52,8 @@ app.controller('PhotoController', function ($scope, $modal, FacebookService, Fli
     // check if the uploaded date is within a month from now
     $scope.isRecent = function (date) {
         var howManyDaysAgo = 7;
-        var date = new Date(date * 1000);
+        // convert integer date value to Date object
+        date = new Date(date * 1000);
         var today = new Date();
         var daysAgo = new Date(today.setDate(today.getDate() - howManyDaysAgo));
         return (date > daysAgo);
@@ -65,19 +67,17 @@ app.controller('ModalInstanceController', function ($scope, $modalInstance, $tim
 
     $scope.cancel = function () {
         $modalInstance.dismiss('cancel');
-    }
+    };
 
     $scope.prevImage = function () {
         index = (index - 1 + size) % size;
         $scope.item = items[index];
-        console.log('prevImage() - new index: ', index);
     };
 
     $scope.nextImage = function () {
         index = (index + 1) % size;
         $scope.item = items[index];
-        console.log('nextImage() - new index: ', index);
-    }
+    };
 
     $document.bind('keydown', function (event) {
         switch (event.which) {

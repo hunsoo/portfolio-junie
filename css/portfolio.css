@@ -98,6 +98,10 @@
     margin-top: 12px;
 }
 
+.nonDraggableImage{
+    -webkit-user-drag: none;
+}
+
 .social-links {
     margin-left: 0;
 }
